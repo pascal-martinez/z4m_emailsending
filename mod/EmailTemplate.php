@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module Template class
  *
- * File version: 1.0
- * Last update: 05/21/2024
+ * File version: 1.1
+ * Last update: 08/02/2024
  */
 namespace z4m_emailsending\mod;
 
@@ -185,9 +185,8 @@ class EmailTemplate {
     protected function replacePlaceholder($subject, $placeholder, $value, $sensitiveValues) {
         $currentValue = is_array($sensitiveValues) && in_array($placeholder, $sensitiveValues)
                 ? self::SENSITIVE_TAG_BEGIN . $value . self::SENSITIVE_TAG_END : $value;
-        return str_replace("[[{$placeholder}]]",
-                $this->getStandardVariableValue($placeholder, $currentValue),
-                $subject);
+        $valueToReplace = $this->getStandardVariableValue($placeholder, $currentValue);
+        return str_replace("[[{$placeholder}]]", strval($valueToReplace), $subject);
     }
 
     /**
