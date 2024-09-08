@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * Parameters of the ZnetDK 4 Mobile Email Sending module
  *
- * File version: 1.1
- * Last update: 08/02/2024
+ * File version: 1.2
+ * Last update: 09/08/2024
  */
 
 /**
@@ -68,9 +68,9 @@ define('MOD_Z4M_EMAILSENDING_SMTP_DEBUG_LEVEL', 4);
  * Module version number
  * @var string Version
  */
-define('MOD_Z4M_EMAILSENDING_VERSION_NUMBER','1.1');
+define('MOD_Z4M_EMAILSENDING_VERSION_NUMBER','1.2');
 /**
  * Module version date
  * @var string Date in W3C format
  */
-define('MOD_Z4M_EMAILSENDING_VERSION_DATE','2024-08-02');
+define('MOD_Z4M_EMAILSENDING_VERSION_DATE','2024-09-08');

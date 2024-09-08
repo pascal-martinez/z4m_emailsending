@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module history view
  *
- * File version: 1.0
- * Last update: 05/30/2024
+ * File version: 1.1
+ * Last update: 09/08/2024
  */
 ?>
 <style>
@@ -143,6 +143,10 @@
             if (JSONFilters !== null) {
                 requestData.search_criteria = JSONFilters;
             }
+        };
+        historyList.loadedCallback = function(rowCount, pageNumber) {
+            const purgeBtn = $('#z4m-email-sending-history-list-filter button.purge');
+            purgeBtn.prop('disabled', rowCount === 0 && pageNumber === 1);
         };
         function getFilterCriteria() {
             const filterForm = z4m.form.make('#z4m-email-sending-history-list-filter'),

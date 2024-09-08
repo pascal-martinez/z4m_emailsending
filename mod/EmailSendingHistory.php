@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module History class
  * 
- * File version: 1.0
- * Last update: 05/22/2024
+ * File version: 1.1
+ * Last update: 09/08/2024
  */
 namespace z4m_emailsending\mod;
 
@@ -111,6 +111,8 @@ class EmailSendingHistory {
         $dao = new model\EmailSendingHistoryDAO();
         if (is_array($searchCriteria)) {
             $dao->applySearchCriteria($searchCriteria);
+        } else {
+            $dao->applySearchCriteria(['start' => '2020-01-01']);
         }
         return $dao->remove(NULL);
     }
