@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module settings view
  *
- * File version: 1.0
- * Last update: 05/21/2024
+ * File version: 1.1
+ * Last update: 10/08/2024
  */
 ?>
 <style>
@@ -31,7 +31,7 @@
     }
 </style>
 <div id="z4m-email-sending-settings-container" class="w3-auto w3-section w3-card">
-    <header class="w3-theme-d5 w3-container">
+    <header class="w3-theme-dark w3-container">
         <h2 class="w3-large"><i class="fa fa-cogs"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_TITLE; ?></h2>
     </header>
     <form id="z4m-email-sending-settings-form" class="w3-theme-light" data-zdk-load="Z4MEmailSendingCtrl:settings" 
@@ -113,7 +113,7 @@
 </div>
 <div id="z4m-email-sending-settings-send-test-email" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-        <header class="w3-container w3-theme-d5">
+        <header class="w3-container w3-theme-dark">
             <a class="close w3-button w3-xlarge w3-hover-theme w3-display-topright" href="javascript:void(0)" aria-label="<?php echo LC_BTN_CLOSE; ?>"><i class="fa fa-times-circle fa-lg" aria-hidden="true" title="<?php echo LC_BTN_CLOSE; ?>"></i></a>
             <h4>
                 <i class="fa fa-paper-plane-o fa-lg"></i>

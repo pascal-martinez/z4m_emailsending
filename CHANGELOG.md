@@ -1,5 +1,8 @@
 # CHANGE LOG: Email sending (z4m_emailsending)
 
+## Version 1.3, 2024-10-08
+- BUG FIXING: colors applied to the UI elements are adjusted for a better WCAG legibility.
+
 ## Version 1.2, 2024-09-08
 - BUG FIXING: PHP ZnetDK Error DAO-006 when purging history if no criterium is selected.
 - BUG FIXING: the 'Purge' button is now disabled if the history is empty.
