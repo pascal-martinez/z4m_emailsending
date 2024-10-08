@@ -1,5 +1,5 @@
 # ZnetDK 4 Mobile module: Email sending (z4m_emailsending)
-![Screenshot of the User Sent emails view provided by the ZnetDK 4 Mobile 'z4m_emailsending' module](https://mobile.znetdk.fr/applications/default/public/images/modules/z4m_emailsending/screenshot1.png?v1.0)
+![Screenshot of the User Sent emails view provided by the ZnetDK 4 Mobile 'z4m_emailsending' module](https://mobile.znetdk.fr/applications/default/public/images/modules/z4m_emailsending/screenshot1.png?v1.3)
 
 The **z4m_emailsending** module extends the [ZnetDK 4 Mobile](/../../../znetdk4mobile) starter application by adding the following features:
 - Sends automatically an email to :
@@ -79,7 +79,7 @@ For advanced configuration, extra PHP constants have to be added to the `config.
 of your application (see second section below).
 
 ### FROM THE CONFIGURATION VIEW OF THE APP
-![Screenshot of the Email sending configuration view provided by the ZnetDK 4 Mobile 'z4m_emailsending' module](https://mobile.znetdk.fr/applications/default/public/images/modules/z4m_emailsending/screenshot2.png?v1.0)
+![Screenshot of the Email sending configuration view provided by the ZnetDK 4 Mobile 'z4m_emailsending' module](https://mobile.znetdk.fr/applications/default/public/images/modules/z4m_emailsending/screenshot2.png?v1.3)
 
 To send your first email, you have to configure the email server by following
 the procedure below:
