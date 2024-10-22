@@ -18,9 +18,12 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module settings view
  *
- * File version: 1.1
- * Last update: 10/08/2024
+ * File version: 1.2
+ * Last update: 10/21/2024
  */
+
+// Setting the $color $variable
+require 'fragment/color_scheme.php';
 ?>
 <style>
     #z4m-email-sending-settings-container {
@@ -31,14 +34,14 @@
     }
 </style>
 <div id="z4m-email-sending-settings-container" class="w3-auto w3-section w3-card">
-    <header class="w3-theme-dark w3-container">
+    <header class="<?php echo $color['modal_header']; ?> w3-container">
         <h2 class="w3-large"><i class="fa fa-cogs"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_TITLE; ?></h2>
     </header>
-    <form id="z4m-email-sending-settings-form" class="w3-theme-light" data-zdk-load="Z4MEmailSendingCtrl:settings" 
+    <form id="z4m-email-sending-settings-form" class="<?php echo $color['modal_content']; ?>" data-zdk-load="Z4MEmailSendingCtrl:settings" 
             data-zdk-submit="Z4MEmailSendingCtrl:storeSettings"
             data-notsaved="<?php echo MOD_Z4M_EMAILSENDING_SETTINGS_FORM_NOT_SAVED_MESSAGE; ?>">
         <section class="w3-container">
-            <h3 class="w3-text-theme w3-border-bottom w3-border-theme"><i class="fa fa-envelope-o fa-fw"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SENDER_TITLE; ?></h3>
+            <h3 class="<?php echo $color['form_title']; ?> <?php echo $color['form_title_border_bottom']; ?> w3-border-bottom"><i class="fa fa-envelope-o fa-fw"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SENDER_TITLE; ?></h3>
             <label><b><?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SENDER_NAME_LABEL; ?></b>
                 <input class="w3-input w3-border w3-margin-bottom" type="text" name="sender_name" placeholder="<?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SENDER_NAME_PLACEHOLDER; ?>" maxlength="120">
             </label>
@@ -46,7 +49,7 @@
                 <input class="w3-input w3-border w3-margin-bottom" type="email" name="sender_email" placeholder="<?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SENDER_EMAIL_PLACEHOLDER; ?>" maxlength="135">
             </label>
             <div class="w3-padding"></div>
-            <h3 class="w3-text-theme w3-border-bottom w3-border-theme"><i class="fa fa-server fa-fw"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SERVER_TITLE; ?></h3>
+            <h3 class="<?php echo $color['form_title']; ?> <?php echo $color['form_title_border_bottom']; ?> w3-border-bottom"><i class="fa fa-server fa-fw"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SERVER_TITLE; ?></h3>
             <div class="w3-margin-bottom">
                 <label class="w3-margin-right">
                     <input class="w3-radio" type="radio" name="is_smtp" value="0">
@@ -84,11 +87,11 @@
                     </label>
                 </section>
                 <div class="w3-bar">
-                    <button class="test-smtp-settings w3-button w3-right w3-theme-action" type="button"><i class="fa fa-check-circle-o fa-lg"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SERVER_SMTP_TEST_BUTTON_LABEL; ?></button>
+                    <button class="test-smtp-settings w3-button w3-right <?php echo $color['btn_action']; ?>" type="button"><i class="fa fa-check-circle-o fa-lg"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SERVER_SMTP_TEST_BUTTON_LABEL; ?></button>
                 </div>
             </section>
             <div class="w3-padding"></div>
-            <h3 class="w3-text-theme w3-border-bottom w3-border-theme"><i class="fa fa-pencil-square-o"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_OPTIONS_TITLE; ?></h3>
+            <h3 class="<?php echo $color['form_title']; ?> <?php echo $color['form_title_border_bottom']; ?> w3-border-bottom"><i class="fa fa-pencil-square-o"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_OPTIONS_TITLE; ?></h3>
             <label class="w3-show-block w3-margin-bottom">
                 <input class="w3-check" type="checkbox" name="is_sending_enabled" value="1">
                 <span><?php echo MOD_Z4M_EMAILSENDING_SETTINGS_OPTIONS_SENDING_LABEL; ?></span>
@@ -102,25 +105,25 @@
                 <span><?php echo MOD_Z4M_EMAILSENDING_SETTINGS_OPTIONS_SMTP_DEBUG_LABEL . MOD_Z4M_EMAILSENDING_SMTP_DEBUG_LEVEL; ?> (<i>emails_sent.log</i>)</span>
             </label>
             <div class="w3-padding"></div>
-            <button class="w3-button w3-block w3-green w3-section" type="submit"><i class="fa fa-save fa-lg"></i> <?php echo LC_BTN_SAVE; ?></button>
+            <button class="w3-button w3-block <?php echo $color['btn_submit']; ?> w3-section" type="submit"><i class="fa fa-save fa-lg"></i> <?php echo LC_BTN_SAVE; ?></button>
         </section>
     </form>
-    <footer class="w3-container w3-border-top w3-border-theme w3-padding-16 w3-theme-l4">
+    <footer class="w3-container w3-border-top <?php echo $color['modal_footer_border_top']; ?> w3-padding-16 <?php echo $color['modal_footer']; ?>">
         <div class="w3-bar">
-            <button class="send-test-email w3-button w3-right w3-theme-action" type="button"><i class="fa fa-paper-plane-o fa-lg"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SEND_TEST_EMAIL_BUTTON_LABEL; ?></button>
+            <button class="send-test-email w3-button w3-right <?php echo $color['btn_action']; ?>" type="button"><i class="fa fa-paper-plane-o fa-lg"></i> <?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SEND_TEST_EMAIL_BUTTON_LABEL; ?></button>
         </div>
     </footer>
 </div>
 <div id="z4m-email-sending-settings-send-test-email" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-        <header class="w3-container w3-theme-dark">
-            <a class="close w3-button w3-xlarge w3-hover-theme w3-display-topright" href="javascript:void(0)" aria-label="<?php echo LC_BTN_CLOSE; ?>"><i class="fa fa-times-circle fa-lg" aria-hidden="true" title="<?php echo LC_BTN_CLOSE; ?>"></i></a>
+        <header class="w3-container <?php echo $color['modal_header']; ?>">
+            <a class="close w3-button w3-xlarge <?php echo $color['btn_hover']; ?> w3-display-topright" href="javascript:void(0)" aria-label="<?php echo LC_BTN_CLOSE; ?>"><i class="fa fa-times-circle fa-lg" aria-hidden="true" title="<?php echo LC_BTN_CLOSE; ?>"></i></a>
             <h4>
                 <i class="fa fa-paper-plane-o fa-lg"></i>
                 <span class="title"><?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SEND_TEST_EMAIL_BUTTON_LABEL; ?></span>
             </h4>
         </header>
-        <form class="w3-container w3-theme-light" data-zdk-submit="Z4MEmailSendingCtrl:sendTestEmail">
+        <form class="w3-container <?php echo $color['modal_content']; ?>" data-zdk-submit="Z4MEmailSendingCtrl:sendTestEmail">
             <div class="w3-section">
                 <label><b><?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SEND_TEST_EMAIL_RECIPIENT_EMAIL_LABEL; ?></b>
                     <input class="w3-input w3-border w3-margin-bottom" type="email" name="recipient_email" required placeholder="<?php echo MOD_Z4M_EMAILSENDING_SETTINGS_SENDER_EMAIL_PLACEHOLDER; ?>">
@@ -133,8 +136,8 @@
                 <?php echo LC_BTN_VALIDATE; ?>
             </button>
         </form>
-        <footer class="w3-container w3-border-top w3-border-theme w3-padding-16 w3-theme-l4">
-            <button type="button" class="cancel w3-button w3-red">
+        <footer class="w3-container w3-border-top <?php echo $color['modal_footer_border_top']; ?> w3-padding-16 <?php echo $color['modal_footer']; ?>">
+            <button type="button" class="cancel w3-button <?php echo $color['btn_cancel']; ?>">
                 <i class="fa fa-close fa-lg"></i>&nbsp;
                 <?php echo LC_BTN_CLOSE; ?>
             </button>

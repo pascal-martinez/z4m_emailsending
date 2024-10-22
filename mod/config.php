@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * Parameters of the ZnetDK 4 Mobile Email Sending module
  *
- * File version: 1.3
- * Last update: 10/08/2024
+ * File version: 1.4
+ * Last update: 10/22/2024
  */
 
 /**
@@ -65,12 +65,23 @@ define('MOD_Z4M_EMAILSENDING_NOTIFY_USER_ON_PASSWORD_CHANGE', TRUE);
 define('MOD_Z4M_EMAILSENDING_SMTP_DEBUG_LEVEL', 4);
 
 /**
+ * Color scheme of the Email sending UI.
+ * @var array|NULL Colors used to display the home menu. The expected array keys
+ * are 'content', 'modal_header', 'modal_content' ,'modal_footer',
+ * 'modal_footer_border_top', 'btn_action', 'btn_hover', 'btn_submit', 
+ * 'btn_cancel', 'msg_error', 'filter_bar', 'list_border_bottom', 'icon',
+ * 'form_title' and 'form_title_border_bottom';
+ * If NULL, default color CSS classes are applied.
+ */
+define('MOD_Z4M_EMAILSENDING_COLOR_SCHEME', NULL);
+
+/**
  * Module version number
  * @var string Version
  */
-define('MOD_Z4M_EMAILSENDING_VERSION_NUMBER','1.3');
+define('MOD_Z4M_EMAILSENDING_VERSION_NUMBER','1.4');
 /**
  * Module version date
  * @var string Date in W3C format
  */
-define('MOD_Z4M_EMAILSENDING_VERSION_DATE','2024-10-08');
+define('MOD_Z4M_EMAILSENDING_VERSION_DATE','2024-10-22');

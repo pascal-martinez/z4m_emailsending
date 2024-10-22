@@ -18,9 +18,12 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module history view
  *
- * File version: 1.2
- * Last update: 10/08/2024
+ * File version: 1.3
+ * Last update: 10/21/2024
  */
+
+// Setting the $color $variable
+require 'fragment/color_scheme.php';
 ?>
 <style>
     #z4m-email-sending-history-list-filter .no-wrap {
@@ -43,7 +46,7 @@
     }
 </style>
 <!-- Filter by dates and status -->
-<form id="z4m-email-sending-history-list-filter" class="w3-padding w3-panel w3-theme">
+<form id="z4m-email-sending-history-list-filter" class="w3-padding w3-panel <?php echo $color['filter_bar']; ?>">
     <div class="w3-cell w3-mobile w3-margin-bottom">
         <div class="w3-cell no-wrap"><i class="fa fa-calendar"></i>&nbsp;<b><?php echo MOD_Z4M_EMAILSENDING_HISTORY_FILTER_PERIOD; ?></b>&nbsp;</div>
         <div class="w3-cell w3-mobile">
@@ -63,13 +66,13 @@
         </div>
     </div>
     <div class="w3-cell">
-        <button class="purge w3-button w3-theme-action" type="button" data-confirmation="<?php echo MOD_Z4M_EMAILSENDING_HISTORY_PURGE_CONFIRMATION_TEXT; ?>">
+        <button class="purge w3-button <?php echo $color['btn_action']; ?>" type="button" data-confirmation="<?php echo MOD_Z4M_EMAILSENDING_HISTORY_PURGE_CONFIRMATION_TEXT; ?>">
             <i class="fa fa-trash fa-lg"></i> <?php echo MOD_Z4M_EMAILSENDING_HISTORY_PURGE_BUTTON_LABEL; ?>
         </button>
     </div>
 </form>
 <!-- Header -->
-<div id="z4m-email-sending-history-list-header" class="w3-row w3-theme-light w3-hide-small w3-border-bottom w3-border-theme">
+<div id="z4m-email-sending-history-list-header" class="w3-row <?php echo $color['content']; ?> w3-hide-small w3-border-bottom <?php echo $color['list_border_bottom']; ?>">
     <div class="w3-col m3 l2 w3-padding-small"><b><?php echo MOD_Z4M_EMAILSENDING_HISTORY_DATETIME_LABEL; ?></b></div>
     <div class="w3-col m2 l2 w3-padding-small"><b><?php echo MOD_Z4M_EMAILSENDING_HISTORY_SENDER_LABEL; ?></b></div>
     <div class="w3-col m2 l2 w3-padding-small"><b><?php echo MOD_Z4M_EMAILSENDING_HISTORY_RECIPIENTS_LABEL; ?></b></div>
@@ -80,7 +83,7 @@
 <ul id="z4m-email-sending-history-list" class="w3-ul w3-hide"
     data-zdk-load="Z4MEmailSendingCtrl:history"
     data-url="<?php echo General::getURIforDownload('Z4MEmailSendingCtrl'); ?>">
-    <li class="w3-border-theme">
+    <li class="<?php echo $color['list_border_bottom']; ?>">
         <div class="w3-row w3-stretch">
             <div class="w3-col s12 m3 l2 w3-padding-small">
                 <i class="fa fa-calendar w3-hide-large w3-hide-medium"></i>
@@ -96,7 +99,7 @@
                 <div><b><?php echo MOD_Z4M_EMAILSENDING_HISTORY_SUBJECT_LABEL; ?></b> <i>{{subject}}</i></div>
                 <div class="attachments w3-hide"><b><?php echo MOD_Z4M_EMAILSENDING_HISTORY_ATTACHMENTS_LABEL; ?></b> <span class="value">{{attachments}}</span></div>
                 <div class="see">
-                    <i class="fa fa-eye fa-lg w3-text-theme"></i>
+                    <i class="fa fa-eye fa-lg <?php echo $color['icon']; ?>"></i>
                     <a href="{{id}}"><?php echo MOD_Z4M_EMAILSENDING_HISTORY_SEE_EMAIL_LABEL; ?> ID={{id}}</a>
                 </div>
             </div>
@@ -110,12 +113,12 @@
             </div>
         </div>
     </li>
-    <li><h3 class="w3-red w3-center"><i class="fa fa-frown-o"></i>&nbsp;<?php echo LC_MSG_INF_NO_RESULT_FOUND; ?></h3></li>
+    <li><h3 class="<?php echo $color['msg_error']; ?> w3-center w3-stretch"><i class="fa fa-frown-o"></i>&nbsp;<?php echo LC_MSG_INF_NO_RESULT_FOUND; ?></h3></li>
 </ul>
 <div id="z4m-email-sending-history-see-email" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-        <header class="w3-container w3-theme-dark">
-            <a class="close w3-button w3-xlarge w3-hover-theme w3-display-topright" href="javascript:void(0)" aria-label="<?php echo LC_BTN_CLOSE; ?>"><i class="fa fa-times-circle fa-lg" aria-hidden="true" title="<?php echo LC_BTN_CLOSE; ?>"></i></a>
+        <header class="w3-container <?php echo $color['modal_header']; ?>">
+            <a class="close w3-button w3-xlarge <?php echo $color['btn_hover']; ?> w3-display-topright" href="javascript:void(0)" aria-label="<?php echo LC_BTN_CLOSE; ?>"><i class="fa fa-times-circle fa-lg" aria-hidden="true" title="<?php echo LC_BTN_CLOSE; ?>"></i></a>
             <h4>
                 <i class="fa fa-paper-plane-o fa-lg"></i>
                 <?php echo MOD_Z4M_EMAILSENDING_HISTORY_SEE_EMAIL_LABEL; ?> ID=
@@ -123,10 +126,10 @@
             </h4>
         </header>
         <div class="w3-row">
-            <iframe class="w3-col w3-theme-light" data-error="<?php echo LC_MSG_CRI_ERR_GENERIC; ?>"></iframe>
+            <iframe class="w3-col <?php echo $color['modal_content']; ?>" data-error="<?php echo LC_MSG_CRI_ERR_GENERIC; ?>"></iframe>
         </div>
-        <footer class="w3-container w3-border-top w3-border-theme w3-padding-16 w3-theme-l4">
-            <button type="button" class="cancel w3-button w3-red">
+        <footer class="w3-container w3-padding-16 w3-border-top <?php echo $color['modal_footer_border_top']; ?> <?php echo $color['modal_footer']; ?>">
+            <button type="button" class="cancel w3-button <?php echo $color['btn_cancel']; ?>">
                 <i class="fa fa-close fa-lg"></i>&nbsp;
                 <?php echo LC_BTN_CLOSE; ?>
             </button>

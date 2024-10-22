@@ -1,5 +1,8 @@
 # CHANGE LOG: Email sending (z4m_emailsending)
 
+## Version 1.4, 2024-10-22
+- CHANGE: new MOD_Z4M_EMAILSENDING_COLOR_SCHEME PHP constant to customize the color scheme of the email sending UI.
+
 ## Version 1.3, 2024-10-08
 - BUG FIXING: colors applied to the UI elements are adjusted for a better WCAG legibility.
 
