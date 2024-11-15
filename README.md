@@ -50,7 +50,7 @@ or from your IDE, pull the code from this module's GitHub repository,
 3. Edit the App's [`menu.php`](/../../../znetdk4mobile/blob/master/applications/default/app/menu.php)
 located in the [`./applications/default/app/`](/../../../znetdk4mobile/tree/master/applications/default/app/)
 subfolder and include the [`menu.inc`](mod/menu.inc) script to add menu item definition for the
-`zdk_email_sending_server_settings` and `zdk_email_sending_history` views.
+`z4m_email_sending_settings` and `z4m_email_sending_history` views.
 ```php
 require ZNETDK_MOD_ROOT . '/z4m_emailsending/mod/menu.inc';
 ```
