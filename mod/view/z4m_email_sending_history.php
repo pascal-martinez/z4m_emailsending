@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * ZnetDK 4 Mobile Email Sending module history view
  *
- * File version: 1.3
- * Last update: 10/21/2024
+ * File version: 1.4
+ * Last update: 09/04/2025
  */
 
 // Setting the $color $variable
@@ -121,8 +121,7 @@ require 'fragment/color_scheme.php';
             <a class="close w3-button w3-xlarge <?php echo $color['btn_hover']; ?> w3-display-topright" href="javascript:void(0)" aria-label="<?php echo LC_BTN_CLOSE; ?>"><i class="fa fa-times-circle fa-lg" aria-hidden="true" title="<?php echo LC_BTN_CLOSE; ?>"></i></a>
             <h4>
                 <i class="fa fa-paper-plane-o fa-lg"></i>
-                <?php echo MOD_Z4M_EMAILSENDING_HISTORY_SEE_EMAIL_LABEL; ?> ID=
-                <span class="title"></span>
+                <?php echo MOD_Z4M_EMAILSENDING_HISTORY_SEE_EMAIL_LABEL; ?> ID=<span class="title"></span>
             </h4>
         </header>
         <div class="w3-row">
@@ -240,14 +239,17 @@ require 'fragment/color_scheme.php';
         // See email
         $('#z4m-email-sending-history-list').on('click.z4m_email_sending_history', 'li .see a', function(e){
             e.preventDefault();
-            const emailId = $(this).attr('href');
-            const downloadUrl = $('#z4m-email-sending-history-list').data('url');
-            const emailModalObj = z4m.modal.make('#z4m-email-sending-history-see-email');
-            const iframeEl = emailModalObj.element.find('iframe');
+            const $this = this, emailId = $(this).attr('href'),
+                downloadUrl = $('#z4m-email-sending-history-list').data('url'),
+                emailModalObj = z4m.modal.make('#z4m-email-sending-history-see-email'),
+                iframeEl = emailModalObj.element.find('iframe');
             emailModalObj.setTitle(emailId);
             iframeEl[0].onload = function() {
-                emailModalObj.open();
+                emailModalObj.open(null, function(){ // On close, focus restored to the clicked link
+                    $this.focus();
+                });
                 z4m.ajax.toggleLoader?.(false);
+                emailModalObj.element.find('button.cancel')[0].focus();
             };
             iframeEl[0].onerror = function() {
                 const filterForm = z4m.form.make('#z4m-email-sending-history-list-filter');

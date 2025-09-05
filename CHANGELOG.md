@@ -1,5 +1,9 @@
 # CHANGE LOG: Email sending (z4m_emailsending)
 
+## Version 1.5, 2025-09-04
+- BUG FIXING: the focus is now set to the close button of the modal dialog opened when clicking the "See email ID=xxx" link in the Emails sent list.
+- BUG FIXING: the focus is now set to the last clicked "See email ID=x" link after closing the "See email ID=x" modal dialog in the Emails sent list.
+
 ## Version 1.4, 2024-10-22
 - CHANGE: new MOD_Z4M_EMAILSENDING_COLOR_SCHEME PHP constant to customize the color scheme of the email sending UI.
 

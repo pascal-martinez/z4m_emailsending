@@ -18,8 +18,8 @@
  * --------------------------------------------------------------------
  * Parameters of the ZnetDK 4 Mobile Email Sending module
  *
- * File version: 1.4
- * Last update: 10/22/2024
+ * File version: 1.5
+ * Last update: 09/04/2025
  */
 
 /**
@@ -79,9 +79,9 @@ define('MOD_Z4M_EMAILSENDING_COLOR_SCHEME', NULL);
  * Module version number
  * @var string Version
  */
-define('MOD_Z4M_EMAILSENDING_VERSION_NUMBER','1.4');
+define('MOD_Z4M_EMAILSENDING_VERSION_NUMBER','1.5');
 /**
  * Module version date
  * @var string Date in W3C format
  */
-define('MOD_Z4M_EMAILSENDING_VERSION_DATE','2024-10-22');
+define('MOD_Z4M_EMAILSENDING_VERSION_DATE','2025-09-04');
